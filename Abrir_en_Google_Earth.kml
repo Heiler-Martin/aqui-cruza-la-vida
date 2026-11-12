@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://www.opengis.net/kml/2.2"><NetworkLink><name>Paso de Palmero, fauna en vias CORPORINOQUIA (en vivo)</name><open>1</open>
+<kml xmlns="http://www.opengis.net/kml/2.2"><NetworkLink><name>Aqui cruza la vida, fauna en vias CORPORINOQUIA (en vivo)</name><open>1</open>
 <refreshVisibility>0</refreshVisibility><flyToView>1</flyToView>
-<Link><href>https://heiler-martin.github.io/paso-de-palmero/fauna_vias_publico.kml</href><refreshMode>onInterval</refreshMode><refreshInterval>3600</refreshInterval></Link>
+<Link><href>https://heiler-martin.github.io/aqui-cruza-la-vida/fauna_vias_publico.kml</href><refreshMode>onInterval</refreshMode><refreshInterval>3600</refreshInterval></Link>
 </NetworkLink></kml>
