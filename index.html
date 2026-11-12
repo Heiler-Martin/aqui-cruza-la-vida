@@ -42,10 +42,10 @@ footer .lfb{height:52px;display:block;margin:0 auto 12px}footer a{color:#fff}
 <body><div class="topbar"><img src="img/logo_corporinoquia_h.png" alt="CORPORINOQUIA" class="lc"><span class="dep">Subdireccion de Control y Calidad Ambiental</span></div>
 <header><div class="hd"><img src="img/logo_aqui_cruza_la_vida.png" alt="Aqui cruza la vida"><div><h1>Reportes ciudadanos de fauna en vias: mapa y tablero diario</h1><p class="sub">Campana Aqui cruza la vida &middot; Sistema de Monitoreo de Fauna en Vias</p></div></div></header>
 <div class="franja" aria-hidden="true"></div><main>
-<p class="meta">Corte: 2026-11-12 11:36. Se publican unicamente registros validados por biologo, sin datos personales. Los registros DEMO, domesticos, duplicados y rechazados no cuentan.</p>
+<p class="meta">Corte: 2026-11-12 12:08. Se publican unicamente registros validados por biologo, sin datos personales. Los registros DEMO, domesticos, duplicados y rechazados no cuentan.</p>
 <h2>Cifras</h2><div class="cards"><div class="card" style="border-top-color:#618633"><div class="num">4</div><div class="lbl">Registros publicados (validados)</div></div><div class="card" style="border-top-color:#00A7BD"><div class="num">0</div><div class="lbl">Nuevos en 24 h</div></div><div class="card" style="border-top-color:#33368B"><div class="num">3</div><div class="lbl">Nuevos en 7 dias</div></div><div class="card" style="border-top-color:#EC7923"><div class="num">1</div><div class="lbl">Heridos o enfermos</div></div><div class="card" style="border-top-color:#EA595B"><div class="num">2</div><div class="lbl">Especies amenazadas</div></div><div class="card" style="border-top-color:#BBCD00"><div class="num">9</div><div class="lbl">Ciudadanos que han reportado</div></div></div>
 <h2>Mapa</h2><div id="mapa"></div>
-<p class="leyenda">Naranja: mamiferos. Verde: reptiles. Azul: aves. Morado: anfibios. Rojo coral: especie amenazada (Res. 0126 de 2024 del MADS). Linea punteada verde: jurisdiccion de CORPORINOQUIA (Ley 1938 de 2018). Cuadros: celdas de 1 km con mas eventos.</p>
+<p class="leyenda">Naranja: mamiferos. Verde: reptiles. Azul: aves. Morado: anfibios. Rojo coral: especie amenazada (Res. 0126 de 2024 del MADS). Linea punteada verde oscuro: jurisdiccion de CORPORINOQUIA (Ley 1938 de 2018). Lineas verdes delgadas: municipios de la jurisdiccion (el nombre aparece al pasar el cursor). Las vias se ven en el mapa base al acercarse. Cuadros: celdas de 1 km con mas eventos.</p>
 <p class="descargas"><a href="Abrir_en_Google_Earth.kml">Abrir en Google Earth</a><a href="fauna_vias_publico.kml">Descargar KML</a><a href="fauna_vias_publico.geojson">GeoJSON</a><a href="fauna_vias_publico.csv">Datos abiertos (CSV, CC BY 4.0)</a></p>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
@@ -55,7 +55,10 @@ var col = {"Mammalia":"#EC7923","Reptilia":"#618633","Aves":"#33368B","Amphibia"
 var mapa = L.map('mapa').setView([5.3,-72.4],7);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap'}).addTo(mapa);
 fetch('jurisdiccion_corporinoquia.geojson').then(function(r){return r.json()}).then(function(j){
- L.geoJSON(j,{style:{color:'#124B4A',weight:2,dashArray:'6 4',fillColor:'#124B4A',fillOpacity:0.05}}).addTo(mapa).bindPopup('Jurisdiccion de CORPORINOQUIA (Ley 1938 de 2018): Arauca, Vichada y Casanare; 10 municipios de Cundinamarca y 5 de Boyaca.');
+ L.geoJSON(j,{style:{color:'#124B4A',weight:2.5,dashArray:'6 4',fillColor:'#124B4A',fillOpacity:0.04}}).addTo(mapa).bindPopup('Jurisdiccion de CORPORINOQUIA (Ley 1938 de 2018): Arauca, Vichada y Casanare; 10 municipios de Cundinamarca y 5 de Boyaca.');
+}).catch(function(e){});
+fetch('municipios_corporinoquia.geojson').then(function(r){return r.json()}).then(function(j){
+ L.geoJSON(j,{style:{color:'#618633',weight:1,fillOpacity:0},onEachFeature:function(f,l){l.bindTooltip(f.properties.municipio+', '+f.properties.departamento,{sticky:true});}}).addTo(mapa);
 }).catch(function(e){});
 var capa = L.geoJSON(datos,{pointToLayer:function(f,ll){var p=f.properties;var c=p.categoriaNacional?'#EA595B':(col[p.class]||'#969696');
  return L.circleMarker(ll,{radius:p.categoriaNacional?9:7,color:'#333',weight:1,fillColor:c,fillOpacity:0.9});},
