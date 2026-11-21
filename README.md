@@ -1,6 +1,6 @@
 # Aqui cruza la vida: reportes ciudadanos de fauna en vias
 
-Mapa publico y tablero diario de la campana Aqui cruza la vida de CORPORINOQUIA (Sistema de Monitoreo de Fauna en Vias). Solo registros validados por biologo, sin datos personales. Datos abiertos CC BY 4.0.
+Mapa publico y tablero diario de la campana Aqui cruza la vida de CORPORINOQUIA (Sistema de Monitoreo de Fauna en Vias). Solo registros validados con protocolo tecnico de identificacion, sin datos personales. Datos abiertos CC BY 4.0.
 
 Mapa y tablero: https://heiler-martin.github.io/aqui-cruza-la-vida/
 
