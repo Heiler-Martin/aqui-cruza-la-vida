@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom"><Document>
-<name>Aqui cruza la vida: fauna en vias, registros validados (9, corte 2026-11-26)</name>
+<name>Aqui cruza la vida: fauna en vias, registros validados (9, corte 2026-11-27)</name>
 <atom:author><atom:name>Heiler Martin Ricaurte Avella, Biologo, Magister en Ingenieria Ambiental</atom:name></atom:author><atom:link href="https://heiler-martin.github.io/aqui-cruza-la-vida/"/>
 <description><![CDATA[<b>Sistema de Monitoreo de Fauna en Vias de CORPORINOQUIA, campana Aqui cruza la vida</b><br>Registros ciudadanos validados con protocolo tecnico de identificacion. Sin datos personales. Datos abiertos CC BY 4.0.<br>Colores: cafe mamiferos, verde reptiles, azul aves, morado anfibios, rojo especie amenazada (Res. 0126 de 2024).<br>Cita: Ricaurte Avella, H. M. (2026). Registros ciudadanos de fauna silvestre en las vias de la jurisdiccion de CORPORINOQUIA, campana Aqui cruza la vida [Conjunto de datos]. Yopal, Casanare.<br>Mapa y tablero: https://heiler-martin.github.io/aqui-cruza-la-vida/]]></description>
 <Folder><name>Registros por corredor</name><open>1</open><Folder><name>Corredor emergente (3)</name><Placemark><name>Iguana</name><TimeStamp><when>2026-11-04T13:53</when></TimeStamp>
